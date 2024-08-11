@@ -160,5 +160,6 @@ func collectors(client *api.Client) []prometheus.Collector {
 		collector.NewControllerCollector(client),
 		collector.NewDeviceCollector(client),
 		collector.NewPortCollector(client),
+		collector.NewGatewayCollector(client),
 	}
 }
