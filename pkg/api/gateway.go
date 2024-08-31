@@ -59,15 +59,18 @@ type gatewayResponse struct {
 }
 
 type Gateway struct {
-	Mac      string             `json:"mac"`
-	Name     string             `json:"name"`
-	Model    string             `json:"model"`
-	PorStats []GatewayPortStats `json:"portStats"`
+	Mac       string             `json:"mac"`
+	Name      string             `json:"name"`
+	Model     string             `json:"model"`
+	PortStats []GatewayPortStats `json:"portStats"`
 }
 
 type GatewayPortStats struct {
-	Port          int64   `json:"port"`
-	Name          string  `json:"name"`
-	InternetState float64 `json:"internetState"`
-	Description   string  `json:"portDesc"`
+	Port            int64   `json:"port"`
+	Type            int64   `json:"type"`
+	Mode            int64   `json:"mode"`
+	Name            string  `json:"name"`
+	InternetState   float64 `json:"internetState"`
+	Description     string  `json:"portDesc"`
+	OnlineDetection int64   `json:"onlineDetection" default:"0"`
 }
